@@ -1,0 +1,132 @@
+.scene {
+	position: relative;
+	width: min(1200px, 100% - 2rem);
+	height: min(75vh, 720px);
+	min-height: 520px;
+	margin: 1rem auto;
+	overflow: hidden;
+}
+
+.sprite {
+	position: absolute;
+	transform: translate(-50%, -100%);
+	user-select: none;
+	pointer-events: none;
+}
+
+.sprite-es6 {
+	left: 49%;
+	top: 72%;
+	width: 380px;
+	z-index: 1;
+}
+
+.sprite-react {
+	left: 50%;
+	top: 100%;
+	width: 300px;
+	z-index: 2;
+}
+
+.sprite-sass {
+	left: 32%;
+	top: 87%;
+	width: 330px;
+	z-index: 1;
+}
+
+.sprite-seo {
+	left: 67%;
+	top: 87%;
+	width: 370px;
+	z-index: 1;
+}
+
+.sprite-blimp {
+	left: 115%;
+	top: 44%;
+	width: 230px;
+	z-index: 6;
+	animation: blimp-flyby 13s linear infinite;
+}
+
+.sprite-react-logo {
+	left: 48%;
+	top: 64%;
+	width: 50px;
+	z-index: 5;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blimp-flyby {
+	from {
+		left: 115%;
+		top: 44%;
+	}
+	to {
+		left: -15%;
+		top: 120%;
+	}
+}
+
+.pokemon-info {
+	--pokemon-info-left: 50%;
+	--pokemon-info-top: 38%;
+	--pokemon-info-rotate: 0deg;
+	--pokemon-info-rotate-x: -30deg;
+	--pokemon-info-rotate-y: 49deg;
+  	--pokemon-info-rotate-z: 3deg;
+
+	position: absolute;
+	left: var(--pokemon-info-left);
+	top: var(--pokemon-info-top);
+	transform: perspective(900px)
+		translate(-50%, -50%)
+		rotateX(var(--pokemon-info-rotate-x))
+		rotateY(var(--pokemon-info-rotate-y))
+    rotateY(var(--pokemon-info-rotate-z))
+		rotate(var(--pokemon-info-rotate));
+	z-index: 6;
+}
+
+.pokemon-info-line {
+	margin: 0;
+	color: #f8fbff;
+	font-size: 0.95rem;
+	line-height: 1.35;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.pokemon-info-line + .pokemon-info-line {
+	margin-top: 0.25rem;
+}
+
+.pokemon-shiny {
+	--pokemon-shiny-left: 67%;
+	--pokemon-shiny-top: 53%;
+	--pokemon-shiny-width: 140px;
+	--pokemon-shiny-rotate: 0deg;
+	--pokemon-shiny-rotate-x: 0deg;
+	--pokemon-shiny-rotate-y: 0deg;
+
+	position: absolute;
+	left: var(--pokemon-shiny-left);
+	top: var(--pokemon-shiny-top);
+	width: var(--pokemon-shiny-width);
+	transform: perspective(900px)
+		translate(-50%, -50%)
+		rotateX(var(--pokemon-shiny-rotate-x))
+		rotateY(var(--pokemon-shiny-rotate-y))
+		rotate(var(--pokemon-shiny-rotate));
+	image-rendering: pixelated;
+	z-index: 5;
+}
